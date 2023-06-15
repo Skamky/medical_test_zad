@@ -35,6 +35,9 @@ class IndexController extends Controller
     }
     public  function  recording()
     {
-        return view("recording");
+        $data = MedicUser::leftJoin("medics","medic_id","=","medics.id")
+            ->leftJoin("professions","medical.medics.profession_id","=","professions.id")
+            ->get();
+        return view("recording",["data"=>$data]);
     }
 }
