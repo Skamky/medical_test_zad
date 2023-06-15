@@ -19,6 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard',[\App\Http\Controllers\IndexController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::post("/post",[\App\Http\Controllers\IndexController::class,"post"]);
+Route::get("/record",[\App\Http\Controllers\IndexController::class,"recording"])->name("record");
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
