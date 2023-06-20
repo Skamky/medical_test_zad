@@ -7,6 +7,38 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## О проекте 
+Проект создан на основе фреймврка Laravel 10 , написан на языке программирования PHP 8, для удобства использован стартовый комплект Laravel Breeze 
+
+## Уставновка 
+1) создайте БД в вашей СУБД(MsSQL/ My sql и тд)
+2) импортируйте таблицы с данными из файла medical.sql (в PhpMyAdmin - выберите созданную БД , Импорт , выберите файл )
+
+3) скопируйте папку проекта в папку "domains" вашего сервера (для работы проекта необходим  php версии 8.1 и выше)
+4)откройте файл .env и измените в нём следящие строчки согласно настройки вашей СУБД:
+
+`DB_CONNECTION=mysql`
+`DB_HOST=localhost`
+`DB_PORT=3306`
+`DB_DATABASE=medical`
+`DB_USERNAME=root`
+`DB_PASSWORD=`
+
+подробнее о конфигурации БД вы можете прочесть тут: https://laravel.su/docs/8.x/database или тут  https://laravel.com/docs/9.x/database
+В случае если файл. env не найден запустите команду composer install (если у вас нету компосера подробнее о нём тут : https://habr.com/ru/articles/439200/ )
+после чего переименуйте файл ".env.example" в ".env"
+и запустите команду `php artisan key:generate`
+
+ 
+## Основные директории
+resources/views - фронт
+app/Http/Controllers - бек
+database/migrations - миграции для создания БД
+
+
+
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
