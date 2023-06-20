@@ -7,6 +7,7 @@
     <table class="table table-striped">
         <thead>
         <tr>
+            <th scope="col">Почта пользователя</th>
             <th scope="col">Дата Записи</th>
             <th scope="col">Имя</th>
             <th scope="col">Фамилия</th>
@@ -17,6 +18,7 @@
         <tbody>
         @foreach($data as $dat)
             <tr>
+                <td>{{$dat->email}}</td>
                 <td>{{$dat->date}}</td>
                 <td>{{$dat->name}}</td>
                 <td>{{$dat->surname}}</td>
@@ -28,6 +30,6 @@
     </table >
 
 
-    {{dump($data)}}
+{{--    {{dump($data)}}--}}
 
 </x-app-layout>
