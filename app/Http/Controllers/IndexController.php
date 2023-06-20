@@ -14,7 +14,7 @@ class IndexController extends Controller
     public function index()
     {
         $professions = Profession::pluck("profession");
-        $medics=  Medic::leftJoin("professions","medical.medics.profession_id","=","professions.id")->orderBy("profession")->get();
+        $medics=  Medic::leftJoin("professions","medics.profession_id","=","professions.id")->orderBy("profession")->get();
        // dd($medics);
       //  dd($proffession);
         return view("dashboard",["medics"=>$medics,'professions'=>$professions]);
@@ -36,7 +36,7 @@ class IndexController extends Controller
     public  function  recording()
     {
         $data = MedicUser::leftJoin("medics","medic_id","=","medics.id")
-            ->leftJoin("professions","medical.medics.profession_id","=","professions.id")
+            ->leftJoin("professions","medics.profession_id","=","professions.id")
             ->get();
         return view("recording",["data"=>$data]);
     }
